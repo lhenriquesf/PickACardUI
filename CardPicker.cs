@@ -8,8 +8,13 @@ namespace PickACardUI
 {
     internal class CardPicker
     {
-        static Random random = new Random();
+        private static Random random = new Random();
 
+        /// <summary>
+        /// Escolha um número de cartas e retorne-as
+        /// </summary>
+        /// <param name="numberOfCards">O nunmero de cartas para escolher</param>
+        /// <returns>Um array de srtings com os nomes das cartas</returns>
         public static string[] PickSomeCards(int numberOfCards)
         {
             string[] pickedCards = new string[numberOfCards];
@@ -22,7 +27,10 @@ namespace PickACardUI
 
         }
 
-
+        /// <summary>
+        /// Retorna a figura de carta
+        /// </summary>
+        /// <returns>Uma string</returns>
         private static string RandomValue()
         {
             int value = random.Next(1, 14);
@@ -41,7 +49,10 @@ namespace PickACardUI
             }   
         }
 
-
+        /// <summary>
+        /// Retorna o naipe conforme a posicao no array
+        /// </summary>
+        /// <returns>Uma string do array</returns>
         private static string RandomSuit()
         {
             int value = random.Next(0, 4);
@@ -50,7 +61,6 @@ namespace PickACardUI
 
             return suits[value];
         }
-
 
     }
 }
